@@ -13,7 +13,7 @@ function Todo({ todo, index, functionality }) {
           onClick={() => functionality.markTodo(index)}
         >
           ✓
-        </Button>{" "}
+        </Button>
         <Button
           variant="outline-danger"
           onClick={() => functionality.removeTodo(index)}
