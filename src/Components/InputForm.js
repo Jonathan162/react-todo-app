@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 
 function InputForm({ functionality, value, setValue }) {
+  //handeling submit and passing value/state to function addTodo (in parent)
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value) return;

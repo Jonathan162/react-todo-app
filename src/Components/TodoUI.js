@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InputForm from "./InputForm.js";
 import Todo from "./Todo.js";
 
 function TodoUI() {
-  //state for getting the input value
+  //state for input value
   const [value, setValue] = useState("");
-  //state for adding input value to an array of objects
+  //state for todos
   const [todos, setTodos] = useState([
     {
       text: "This is how a todo looks!",
@@ -15,6 +14,7 @@ function TodoUI() {
     },
   ]);
 
+  //functions for actions
   const functionality = {
     addTodo(text) {
       const newTodos = [...todos, { text }];
@@ -45,16 +45,12 @@ function TodoUI() {
       />
       <div>
         {todos.map((todo, index) => (
-          <Card>
-            <Card.Body>
-              <Todo
-                key={index}
-                index={index}
-                todo={todo}
-                functionality={functionality}
-              />
-            </Card.Body>
-          </Card>
+          <Todo
+            key={index}
+            index={index}
+            todo={todo}
+            functionality={functionality}
+          />
         ))}
       </div>
     </div>
